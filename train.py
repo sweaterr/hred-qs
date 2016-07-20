@@ -4,7 +4,6 @@ from data_iterator import *
 from state import *
 from session_encdec import *
 from utils import *
-from evaluation import *
 
 import time
 import traceback
@@ -73,6 +72,7 @@ def main(args):
         format = "%(asctime)s: %(name)s: %(levelname)s: %(message)s")
 
     state = eval(args.prototype)()
+    prototype_state()
     timings = init_timings()
 
     if args.resume != "":

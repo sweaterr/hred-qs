@@ -3,12 +3,13 @@ import numpy
 import theano
 logger = logging.getLogger(__name__)
 
+
 class Model(object):
     def __init__(self):
         self.floatX = theano.config.floatX
         # Parameters of the model
         self.params = []
-    
+
     def save(self, filename):
         """
         Save the model to file `filename`
