@@ -72,7 +72,7 @@ def prototype_test():
     state['valid_session'] = "val.ses.pkl"
     state['valid_rank'] = "val.rnk.pkl"
     state['dictionary'] = "train.dict.pkl"
-    state['save_dir'] = './tests/models/'
+    state['save_dir'] = './tests/models'
     state['decoder_bias_type'] = 'first'
     state['prefix'] = "test"
     state['deep_out'] = False

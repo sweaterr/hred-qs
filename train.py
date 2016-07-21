@@ -132,6 +132,7 @@ def main(args):
 
         # Training phase
         batch = train_data.next()
+        print batch['x']
         # Train finished
         if not batch:
             # Restart training
