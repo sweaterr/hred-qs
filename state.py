@@ -67,11 +67,11 @@ def prototype_state():
 def prototype_test():
     state = prototype_state()
 
-    state['train_session'] = "toy.ses.pkl"
-    state['train_rank'] = "toy.rnk.pkl"
-    state['valid_session'] = "tests/data/valid.ses.pkl"
-    state['valid_rank'] = "tests/data/valid.rnk.pkl"
-    state['dictionary'] = "toy.dict.pkl"
+    state['train_session'] = "train.ses.pkl"
+    state['train_rank'] = "train.rnk.pkl"
+    state['valid_session'] = "val.ses.pkl"
+    state['valid_rank'] = "val.rnk.pkl"
+    state['dictionary'] = "train.dict.pkl"
     state['save_dir'] = './tests/models/'
     state['decoder_bias_type'] = 'first'
     state['prefix'] = "test"
