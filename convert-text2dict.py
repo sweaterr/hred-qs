@@ -98,12 +98,17 @@ freqs = collections.defaultdict(lambda: 1)
 
 for line, (session, rank) in enumerate(
         itertools.izip(open(args.input + ".ses", 'r'),
-                       open(args.input + ".rnk", 'r'))):
+                       open(args.input + ".ses", 'r'))):
     session_lst = []
     rank_lst = []
 
-    queries = session.split('\t')
-    ranks = rank.split('\t')
+    queries = session.replace("\n","").split('\t')
+    ranks = rank.replace("\n","").split('\t')
+    for i in range(0,len(ranks)):
+        ranks[i] = 0
+
+    if len(queries) != len(ranks):
+        print " ".join(queries), ranks
 
     for i, query in enumerate(queries):
         query_lst = []
@@ -119,6 +124,7 @@ for line, (session, rank) in enumerate(
             session_lst.append(query_lst + [1])
             freqs[1] += 1
             rank_lst.append(ranks[i])
+
 
     if len(session_lst) > 1:
         rank_lst.append(0)
