@@ -137,8 +137,7 @@ def main(args):
             # Restart training
             logger.debug("Got None...")
             break
-        c = train_batch(
-            batch['x'], batch['y'], batch['max_length'], batch['x_mask'])
+        c = train_batch(batch['x'], batch['y'], batch['max_length'], batch['x_mask'])
         if numpy.isinf(c) or numpy.isnan(c):
             logger.warn("Got NaN cost .. skipping")
             continue
