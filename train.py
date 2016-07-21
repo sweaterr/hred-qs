@@ -122,6 +122,8 @@ def main(args):
     train_done = 0
     ex_done = 0
     while step < state['loop_iters'] and patience >= 0:
+        batch = train_data.next()
+
         # Sample stuff
         if step % 200 == 0:
             for param in model.params:
@@ -129,10 +131,10 @@ def main(args):
                                      numpy.sum(param.get_value() ** 2) ** 0.5)
             samples, costs = random_sampler.sample([[]], n_samples=1, n_turns=3)
             print "Sampled : " + " ".join(samples[0])
+            print batch['x'][0]
 
         # Training phase
-        batch = train_data.next()
-        print batch['x']
+
         # Train finished
         if not batch:
             # Restart training
