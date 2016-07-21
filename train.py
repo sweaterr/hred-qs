@@ -128,7 +128,7 @@ def main(args):
                 print "%s = %.4f" % (param.name,
                                      numpy.sum(param.get_value() ** 2) ** 0.5)
             samples, costs = random_sampler.sample([[]], n_samples=1, n_turns=3)
-            print "Sampled : {}".format(" ".join(samples[0]) )
+            print "Sampled : " + " ".join(samples[0])
 
         # Training phase
         batch = train_data.next()
